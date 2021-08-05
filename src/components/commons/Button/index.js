@@ -21,18 +21,19 @@ export const Button = styled.button`
   opacity: 1;
   transition: opacity ${({ theme }) => theme.transition};
   border-radius: ${({ theme }) => theme.borderRadius};
-  ${breakpointsMedia({
-    xs: css`
-      ${TextStyleVariantMap.smallestException}
-    `,
-    md: css`
-      padding: 12px 43px;
-      ${TextStyleVariantMap.paragraph1}
-    `,
-  })}
+    
   ${({ ghost }) => (ghost ? ButtonGhost : ButtonDefault)}
   &:hover,
   &:focus {
     opacity: .5;
   }
-`;
+
+  ${breakpointsMedia({
+    xs: css`
+      ${TextStyleVariantMap.smallestException}
+    `,
+    md: css`
+      ${TextStyleVariantMap.paragraph1}
+    `,
+    })}
+`; 
